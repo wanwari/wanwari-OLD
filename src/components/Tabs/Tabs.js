@@ -3,11 +3,18 @@ import {useEffect} from "react";
 const Tabs = () => {
 
   useEffect(() => {
+    /*
     const el = document.querySelector('.chrome-tabs');
-    const ChromeTabs = window.ChromeTabs;
-    const chromeTabs = new ChromeTabs();
+    let ChromeTabs = window.ChromeTabs;
+    let chromeTabs = new ChromeTabs();
     chromeTabs.init(el);
-  
+    */ 
+
+    var el = document.querySelector('.chrome-tabs')
+    const ChromeTabs = window.ChromeTabs;
+    var chromeTabs = new ChromeTabs()
+    chromeTabs.init(el)
+
     setTimeout(() => {
       chromeTabs.addTab({
         title: 'Home',

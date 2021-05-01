@@ -58,6 +58,9 @@
   let instanceId = 0
 
   class ChromeTabs {
+
+    tabCounter = 0;
+
     constructor() {
       this.draggabillies = []
     }
@@ -207,6 +210,25 @@
       this.cleanUpPreviouslyDraggedTabs()
       this.layoutTabs()
       this.setupDraggabilly()
+
+      switch(this.tabCounter) {
+        case 0:
+          tabEl.addEventListener('click', () => {
+            console.log("home");
+          });
+          break;
+        case 1:
+          tabEl.addEventListener('click', () => {
+            console.log("portfolio");
+          });
+          break;
+        case 2:
+          tabEl.addEventListener('click', () => {
+            console.log("contact");
+          });
+          break;
+      }
+        this.tabCounter++;
     }
 
     setTabCloseEventListener(tabEl) {
