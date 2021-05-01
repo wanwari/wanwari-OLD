@@ -10,7 +10,9 @@ body {
   height: 46px;
   padding: 8px 3px 4px 3px;
   background: #dee1e6;
+  /*
   border-radius: 5px 5px 0 0;
+  */
   overflow: hidden;
 }
 .chrome-tabs * {

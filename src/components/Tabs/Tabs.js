@@ -3,17 +3,11 @@ import {useEffect} from "react";
 const Tabs = () => {
 
   useEffect(() => {
-    /*
+
     const el = document.querySelector('.chrome-tabs');
     let ChromeTabs = window.ChromeTabs;
     let chromeTabs = new ChromeTabs();
     chromeTabs.init(el);
-    */ 
-
-    var el = document.querySelector('.chrome-tabs')
-    const ChromeTabs = window.ChromeTabs;
-    var chromeTabs = new ChromeTabs()
-    chromeTabs.init(el)
 
     setTimeout(() => {
       chromeTabs.addTab({
@@ -23,7 +17,7 @@ const Tabs = () => {
         animate: true,
         background: false
       });
-    }, 300);
+    }, 100);
 
     setTimeout(() => {
       chromeTabs.addTab({
@@ -33,7 +27,7 @@ const Tabs = () => {
         animate: true,
         background: true 
       });
-    }, 600);
+    }, 400);
 
     setTimeout(() => {
       chromeTabs.addTab({
@@ -43,7 +37,7 @@ const Tabs = () => {
         animate: true,
         background: true 
       });
-    }, 900);
+    }, 700);
 
   }, []);
 
