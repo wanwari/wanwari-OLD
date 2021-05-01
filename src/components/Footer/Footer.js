@@ -1,7 +1,7 @@
 const Footer = () => {
 
   const styles={
-    container: "bg-gray-300 p-6 text-right",
+    container: "bg-gray-100 p-5 text-right",
     text: "lowercase"
   }
 
