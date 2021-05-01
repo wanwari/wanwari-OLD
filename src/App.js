@@ -1,9 +1,9 @@
-import './App.css';
+import Tabs from "./components/Tabs/Tabs";
 
 function App() {
   return (
     <div>
-      <h1>wanwari.ca</h1>
+      <Tabs />
     </div>
   );
 }
