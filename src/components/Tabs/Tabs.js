@@ -1,8 +1,9 @@
 import {useEffect} from "react";
 
-const Tabs = () => {
+const Tabs = props => {
 
   useEffect(() => {
+    console.log(props.active)
 
     const el = document.querySelector('.chrome-tabs');
     let ChromeTabs = window.ChromeTabs;
@@ -15,7 +16,7 @@ const Tabs = () => {
         favicon: false
       }, {
         animate: true,
-        background: false
+        background: props.active === 0 ? false : true
       });
     }, 100);
 
@@ -25,7 +26,7 @@ const Tabs = () => {
         favicon: false
       }, {
         animate: true,
-        background: true 
+        background: props.active === 1 ? false : true
       });
     }, 400);
 
@@ -35,11 +36,11 @@ const Tabs = () => {
         favicon: false
       }, {
         animate: true,
-        background: true 
+        background: props.active === 2 ? false : true
       });
     }, 700);
 
-  }, []);
+  }, [props.active]);
 
   return(
     <div className="chrome-tabs">

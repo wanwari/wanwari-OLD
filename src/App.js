@@ -10,7 +10,9 @@ const App = () => {
 
   return(
     <div className={style.container} style={{backgroundColor: "#f96672"}} >
-      <Tabs />
+      <div>
+        <Tabs active={0}/>
+      </div>
       <Search />
       <Footer />
     </div>
