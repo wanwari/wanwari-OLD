@@ -19,11 +19,11 @@ const Search = () => {
           type(phrases[2], false);
         }, timeoutTwo);
       }, timeoutOne);
-    }, 1000);
+    }, 1500);
 
   }, [])
 
-  const type = (word, del) => {
+  const type = (word, deleteWord) => {
     
     for (let i = 0; i < word.length; i++) {
 
@@ -32,7 +32,7 @@ const Search = () => {
       }, typeSpeed*i);
     }
 
-    if (del) {
+    if (deleteWord) {
       const timeout = word.length * typeSpeed;
       setTimeout(() => {
         for (let i = 0; i < word.length; i++) {
@@ -47,9 +47,9 @@ const Search = () => {
 
   const style={
     container: "text-center",
-    banner: "text-white text-7xl",
+    banner: "text-white text-7xl mb-4",
     subText: "text-4xl",
-    textInput: "shadow-2x1 rounded-l-full w-2/5 h-9 pl-4 text-gray-600",
+    textInput: "shadow-2x1 rounded-l-full w-1/4 h-9 pl-4 text-gray-600 bg-gray-100",
     searchBtn: "rounded-r-full h-9 bg-white text-red-400 px-3 pr-4"
   };
 
