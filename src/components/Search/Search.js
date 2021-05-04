@@ -46,18 +46,23 @@ const Search = () => {
   }
 
   const style={
-    container: "text-center",
+    container: "text-center -mt-60",
     banner: "text-white text-7xl mb-4",
     subText: "text-4xl",
-    textInput: "shadow-2x1 rounded-l-full w-1/4 h-9 pl-4 text-gray-600 bg-gray-100",
-    searchBtn: "rounded-r-full h-9 bg-white text-red-400 px-3 pr-4"
+    textInput: "shadow-2x1 rounded-l-full w-1/4 h-9 pl-4 text-gray-500 bg-gray-100",
+    searchBtn: "align-middle rounded-r-full h-9 bg-white text-red-400 -mt-0.5 px-2"
+
   };
 
   return(
-    <div className={style.container} style={{marginTop: "-15em"}}>
+    <div className={style.container}>
       <h1 className={style.banner}>wanwari<span className={style.subText}>.ca</span></h1> 
       <input type="text" className={style.textInput} disabled value={searchText}/>
-      <input type="submit" value="SE" className={style.searchBtn} />
+      <button className={style.searchBtn}>
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </button>
     </div>
   );
 }
