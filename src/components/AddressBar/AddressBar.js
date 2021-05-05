@@ -9,7 +9,7 @@ const AddressBar = props => {
   }
 
   const style = {
-    container: "flex justify-between bg-white py-2",
+    container: "flex justify-between bg-white py-2 border-b-2 border-gray-200",
     navBtn: "mr-1 py-2",
     urlBar: "flex-grow rounded-lg border border-gray-300 bg-white pl-2 py-1 ml-2 text-gray-600",
     btnGroup: "pl-4",
