@@ -1,4 +1,4 @@
-import {LeftSvg, RightSvg, RefreshSvg, HomeSvg, MenuSvg} from './Svg';
+import {LeftSvg, RightSvg, RefreshSvg, HomeSvg, MenuSvg} from '../Svg';
 
 const AddressBar = () => {
 

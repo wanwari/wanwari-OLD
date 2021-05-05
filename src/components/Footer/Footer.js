@@ -1,15 +1,23 @@
+import {FooterSvg} from '../Svg';
+
 const Footer = () => {
 
-  const styles={
+  const style={
     container: "bg-gray-100 p-5 text-right",
-    text: "lowercase"
+    leftText: "inline-block align-middle pr-1",
+    iconText: "inline-block align-middle text-red-400 pr-1",
+    rightText: "inline-block align-middle",
   }
 
   return(
-    <div className={styles.container}>
-      <p className={styles.text}>&copy; 2021 Wiesa Anwari</p>
+    <div className={style.container}>
+        <div className={style.leftText}>developed </div>
+        <div className={style.iconText}>
+          <FooterSvg />          
+        </div>
+        <div className={style.rightText}>by wiesa anwari</div>
     </div>
-  )
+  );
 }
 
 export default Footer;
