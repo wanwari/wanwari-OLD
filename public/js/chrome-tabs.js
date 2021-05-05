@@ -203,28 +203,28 @@
 
       tabProperties = Object.assign({}, defaultTapProperties, tabProperties)
       this.tabContentEl.appendChild(tabEl)
-      this.setTabCloseEventListener(tabEl)
+      //this.setTabCloseEventListener(tabEl)
       this.updateTab(tabEl, tabProperties)
       this.emit('tabAdd', { tabEl })
       if (!background) this.setCurrentTab(tabEl)
       this.cleanUpPreviouslyDraggedTabs()
       this.layoutTabs()
-      this.setupDraggabilly()
+      //this.setupDraggabilly()
 
       switch(this.tabCounter) {
         case 0:
           tabEl.addEventListener('click', () => {
-            console.log("home");
+            window.location.href = "/";
           });
           break;
         case 1:
           tabEl.addEventListener('click', () => {
-            console.log("portfolio");
+            window.location.href = "/portfolio";
           });
           break;
         case 2:
           tabEl.addEventListener('click', () => {
-            console.log("contact");
+            window.location.href = "/contact";
           });
           break;
       }
