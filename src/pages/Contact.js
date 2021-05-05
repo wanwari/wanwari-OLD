@@ -11,7 +11,7 @@ const Contact = () => {
     <div className={style.container} style={{backgroundColor: "#f96672"}} >
       <div>
         <Tabs active={2}/>
-        <AddressBar />
+        <AddressBar pageName="contact"/>
       </div>
       <Footer />
     </div>

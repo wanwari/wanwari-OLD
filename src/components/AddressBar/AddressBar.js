@@ -1,6 +1,8 @@
 import {LeftSvg, RightSvg, RefreshSvg, HomeSvg, MenuSvg} from '../Svg';
 
-const AddressBar = () => {
+const AddressBar = props => {
+
+  const url = "https://wanwari.ca/" + props.pageName
 
   const refreshPage = () => {
     window.location.reload();
@@ -35,7 +37,7 @@ const AddressBar = () => {
         </button> 
       </div>
 
-      <input type="text" value="https://wanwari.ca/" className={style.urlBar} disabled />
+      <input type="text" value={url} className={style.urlBar} disabled />
       
       <div className={style.menuBtn}>
         <button>

@@ -12,7 +12,7 @@ const Home = () => {
     <div className={style.container} style={{backgroundColor: "#f96672"}} >
       <div>
         <Tabs active={0}/>
-        <AddressBar />
+        <AddressBar pageName=""/>
       </div>
       <Search />
       <Footer />

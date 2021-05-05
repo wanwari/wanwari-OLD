@@ -11,7 +11,7 @@ const Portfolio = () => {
     <div className={style.container} style={{backgroundColor: "#f96672"}} >
       <div>
         <Tabs active={1}/>
-        <AddressBar />
+        <AddressBar pageName="portfolio"/>
       </div>
       <Footer />
     </div>
