@@ -46,10 +46,10 @@ const Search = () => {
   }
 
   const style={
-    container: "text-center -mt-60",
-    banner: "text-white text-7xl mb-4",
+    container: "text-center -mt-52",
+    banner: "text-white text-6xl md:text-7xl mb-4",
     subText: "text-4xl",
-    textInput: "shadow-2x1 rounded-l-full w-1/4 h-9 pl-4 text-gray-500 bg-gray-100",
+    textInput: "shadow-2x1 rounded-l-full h-9 pl-4 text-gray-500 bg-gray-100 w-3/4 sm:w-2/4 xl:w-1/3",
     searchBtn: "align-middle rounded-r-full h-9 bg-white text-red-400 -mt-0.5 px-2"
 
   };
