@@ -44,7 +44,7 @@ const Tabs = props => {
       
     }, 700);
 
-  }, [props.active]);
+  }, [history, props.active]);
 
   return(
     <div className="chrome-tabs">
