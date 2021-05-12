@@ -65,8 +65,9 @@
       this.draggabillies = []
     }
 
-    init(el) {
+    init(el, history) {
       this.el = el
+      this.history = history
 
       this.instanceId = instanceId
       this.el.setAttribute('data-chrome-tabs-instance-id', this.instanceId)
@@ -214,17 +215,17 @@
       switch(this.tabCounter) {
         case 0:
           tabEl.addEventListener('click', () => {
-            window.location.href = "/";
+            this.history.push('/');
           });
           break;
         case 1:
           tabEl.addEventListener('click', () => {
-            window.location.href = "/portfolio";
+            this.history.push('/portfolio');
           });
           break;
         case 2:
           tabEl.addEventListener('click', () => {
-            window.location.href = "/contact";
+            this.history.push('/contact');
           });
           break;
       }

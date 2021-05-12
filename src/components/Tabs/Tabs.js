@@ -1,14 +1,17 @@
 import {useEffect} from "react";
+import {useHistory} from "react-router-dom";
 
 const Tabs = props => {
 
+  let history = useHistory();
+
   useEffect(() => {
-    console.log(props.active)
 
     const el = document.querySelector('.chrome-tabs');
     let ChromeTabs = window.ChromeTabs;
     let chromeTabs = new ChromeTabs();
-    chromeTabs.init(el);
+
+    chromeTabs.init(el, history);
 
     setTimeout(() => {
       chromeTabs.addTab({
@@ -38,6 +41,7 @@ const Tabs = props => {
         animate: true,
         background: props.active === 2 ? false : true
       });
+      
     }, 700);
 
   }, [props.active]);
