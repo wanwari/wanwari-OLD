@@ -8,11 +8,15 @@ const style = {
 }
 
 const Home = () => {
+
+  const screenWidth = window.screen.width;
+  const responsiveAddressBar = (screenWidth >= 1024) ? <AddressBar pageName=""/> : null;
+
   return(
     <div className={style.container} style={{backgroundColor: "#f96672"}} >
       <div>
         <Tabs active={0}/>
-        <AddressBar pageName=""/>
+        {responsiveAddressBar}
       </div>
       <Search />
       <Footer />
