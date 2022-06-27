@@ -1,34 +1,27 @@
 import Card from "../Card/Card";
+import wanwari from "../../img/wanwari_ss.png";
 
 const Project = () => {
+	const style = {
+		container: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-gray-300",
+		card: "flex-grow",
+	};
 
-  const style = {
-    container: "grid grid-flow-rows grid-cols-3 grid-rows-3 bg-gray-300 flex items-start",
-    card: "flex-grow"
-  };
-
-  return(
-    <div className={style.container}>
-      <Card className={style.card} 
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat vivamus at augue eget arcu dictum varius duis. Egestas integer eget aliquet nibh praesent tristique. Ullamcorper a lacus vestibulum sed arcu non. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Sem integer vitae justo eget magna fermentum iaculis eu."    
-      />
-      <Card className={style.card} 
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat vivamus at augue eget arcu dictum varius duis."    
-      />
-      <Card className={style.card} 
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat vivamus at augue eget arcu dictum varius duis. Egestas integer eget aliquet nibh praesent tristique. Ullamcorper a lacus vestibulum sed arcu non. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Sem integer vitae justo eget magna fermentum iaculis eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat vivamus at augue eget arcu dictum varius duis. Egestas integer eget aliquet nibh praesent tristique. Ullamcorper a lacus vestibulum sed arcu non. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Sem integer vitae justo eget magna fermentum iaculis eu."    
-      />
-      <Card className={style.card} 
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat vivamus at augue eget arcu dictum varius duis. Egestas integer eget aliquet nibh praesent tristique. Ullamcorper a lacus vestibulum sed arcu non. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Sem integer vitae justo eget magna fermentum iaculis eu."    
-      />
-      <Card className={style.card} 
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat vivamus at augue eget arcu dictum varius duis. Egestas integer eget aliquet nibh praesent tristique. Ullamcorper a lacus vestibulum sed arcu non. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Sem integer vitae justo eget magna fermentum iaculis eu."    
-      />
-      <Card className={style.card} 
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat vivamus at augue eget arcu dictum varius duis. Egestas integer eget aliquet nibh praesent tristique. Ullamcorper a lacus vestibulum sed arcu non. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Sem integer vitae justo eget magna fermentum iaculis eu."    
-      />
-    </div>
-  );
-}
+	return (
+		<div className={style.container}>
+			<Card
+				className={style.card}
+				projectTitle={"wanwari.ca"}
+				description={
+					"Personal portfolio website used to display the projects I've created and a way to get in contact with me"
+				}
+				imgPath={wanwari}
+				tags={"REACT, TAILWIND, JS, HTML, CSS"}
+				codeURL={"https://github.com/wanwari/wanwari"}
+				projectURL={"https://wanwari.ca/"}
+			/>
+		</div>
+	);
+};
 
 export default Project;
