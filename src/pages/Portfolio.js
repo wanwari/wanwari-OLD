@@ -4,22 +4,22 @@ import Footer from "../components/Footer/Footer";
 import Project from "../components/Project/Project";
 
 const style = {
-  container: "flex flex-col h-screen justify-between bg-gray-300",
-}
+	container: "flex flex-col h-screen justify-between bg-gray-300",
+};
 
 const Portfolio = () => {
-  return(
-    <div className={style.container}>
-      <div>
-        <Tabs active={1}/>
-        <AddressBar pageName="portfolio"/>
-      </div>
+	return (
+		<div className={style.container}>
+			<div>
+				<Tabs active={1} />
+				<AddressBar pageName="portfolio" />
+			</div>
 
-      <Project />
-      
-      <Footer />
-    </div>
-  );
-}
+			<Project />
+
+			<Footer />
+		</div>
+	);
+};
 
 export default Portfolio;
