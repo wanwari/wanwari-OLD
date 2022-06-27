@@ -1,13 +1,32 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
 	const [email, setEmail] = useState("");
 	const [subject, setSubject] = useState("");
 	const [message, setMessage] = useState("");
+	const [emailSent, setEmailSent] = useState(false);
 
-	const handleSubmit = (event) => {
+	const form = useRef();
+
+	const sendEmail = (event) => {
 		if (event) event.preventDefault();
-		console.log("clicked");
+
+		emailjs
+			.sendForm(
+				"service_9xfvp4j",
+				"template_z8rw65z",
+				form.current,
+				"9oeMWyToRbDSE99O6"
+			)
+			.then(
+				(result) => {
+					if (result.text === "OK") setEmailSent(true);
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
 	};
 
 	const styles = {
@@ -17,55 +36,74 @@ const ContactForm = () => {
 		button: "p-2 rounded-lg w-full md:w-1/2 lg:w-1/3 bg-white ",
 		header: "text-white text-center",
 		info: "italic text-right text-gray-700 p-4",
+		result: "font-bold text-white",
 	};
 
 	return (
-		<div className={styles.container}>
-			<form>
-				<div className={styles.element}>
-					<input
-						type="email"
-						name="email"
-						value={email}
-						onChange={(event) => setEmail(event.target.value)}
-						className={styles.input}
-						placeholder="your@email.ca"
-					/>
-				</div>
-				<div className={styles.element}>
-					<input
-						type="text"
-						name="subject"
-						value={subject}
-						onChange={(event) => setSubject(event.target.value)}
-						className={styles.input}
-						placeholder="Subject"
-					/>
-				</div>
-				<div className={styles.element}>
-					<textarea
-						name="message"
-						rows="5"
-						value={message}
-						onChange={(event) => setMessage(event.target.value)}
-						className={styles.input}
-						placeholder="Your Message"
-					/>
-				</div>
+		<div>
+			{!emailSent && (
+				<div className={styles.container}>
+					<form ref={form} onSubmit={sendEmail}>
+						<div className={styles.element}>
+							<input
+								type="email"
+								name="email"
+								value={email}
+								onChange={(event) =>
+									setEmail(event.target.value)
+								}
+								className={styles.input}
+								placeholder="your@email.ca"
+								required
+							/>
+						</div>
+						<div className={styles.element}>
+							<input
+								type="text"
+								name="subject"
+								value={subject}
+								onChange={(event) =>
+									setSubject(event.target.value)
+								}
+								className={styles.input}
+								placeholder="Subject"
+								required
+							/>
+						</div>
+						<div className={styles.element}>
+							<textarea
+								name="message"
+								rows="5"
+								value={message}
+								onChange={(event) =>
+									setMessage(event.target.value)
+								}
+								className={styles.input}
+								placeholder="Your Message"
+								required
+							/>
+						</div>
 
-				<div className={styles.element}>
-					<button
-						onClick={(event) => handleSubmit(event)}
-						className={styles.button}
-					>
-						Send
-					</button>
+						<div className={styles.element}>
+							<input
+								type="submit"
+								className={styles.button}
+								value="Send Email"
+							/>
+						</div>
+					</form>
+					<p className={styles.info}>
+						Feel free to use this form to get in contact with me, or
+						if you have any questions, concerns, or feedback. :)
+					</p>
 				</div>
-			</form>
-			<p className={styles.info}>
-				Feel free to use this form to get in contact with me, or if you
-				have any questions, concerns, or feedback. :)
-			</p>
+			)}
+
+			{emailSent && (
+				<div className={styles.container}>
+					<p classname={styles.result}>Email Sent, Thank You.</p>
+				</div>
+			)}
 		</div>
 	);
 };
