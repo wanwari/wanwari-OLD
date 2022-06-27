@@ -4,11 +4,11 @@ const Card = (props) => {
 		cardHeader: "text-red-500 font-bold text-2xl mt-2 mb-4",
 		cardBody: "border rounded-lg p-2",
 		desc: "p-4",
-		img: "p-4",
+		img: "w-full p-4",
 		cardTags: "text-red-400 text-right font-light italic pt-3",
 		buttonGroup: "mt-4 text-center align-text-bottom",
 		cardButtons:
-			"bg-red-400 rounded-lg p-2 text-white hover:bg-red-700 mr-2",
+			"bg-red-400 rounded-lg p-2 text-white hover:bg-red-600 mr-2",
 	};
 
 	return (
@@ -18,11 +18,6 @@ const Card = (props) => {
 
 				<div className={style.cardBody}>
 					<div className={style.desc}>{props.description}</div>
-					<img
-						className={style.img}
-						src={props.imgPath}
-						alt={props.projectTitle}
-					/>
 					<div className={style.cardTags}>{props.tags}</div>
 				</div>
 			</div>
@@ -36,14 +31,16 @@ const Card = (props) => {
 				>
 					View Code
 				</a>
-				<a
-					href={props.projectURL}
-					target="_blank"
-					rel="noreferrer"
-					className={style.cardButtons}
-				>
-					Visit Project
-				</a>
+				{props.projectURL && (
+					<a
+						href={props.projectURL}
+						target="_blank"
+						rel="noreferrer"
+						className={style.cardButtons}
+					>
+						Visit Project
+					</a>
+				)}
 			</div>
 		</div>
 	);
