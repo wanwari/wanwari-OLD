@@ -9,24 +9,21 @@ const ContactForm = () => {
 
 	const form = useRef();
 
+	const service = process.env.REACT_APP_SERVICE;
+	const template = process.env.REACT_APP_TEMPLATE;
+	const key = process.env.REACT_APP_KEY;
+
 	const sendEmail = (event) => {
 		if (event) event.preventDefault();
 
-		emailjs
-			.sendForm(
-				"service_9xfvp4j",
-				"template_z8rw65z",
-				form.current,
-				"9oeMWyToRbDSE99O6"
-			)
-			.then(
-				(result) => {
-					if (result.text === "OK") setEmailSent(true);
-				},
-				(error) => {
-					console.log(error.text);
-				}
-			);
+		emailjs.sendForm(service, template, form.current, key).then(
+			(result) => {
+				if (result.text === "OK") setEmailSent(true);
+			},
+			(error) => {
+				console.log(error.text);
+			}
+		);
 	};
 
 	const styles = {
