@@ -9,14 +9,14 @@ const ContactForm = () => {
 
 	const form = useRef();
 
-	const service = process.env.REACT_APP_SERVICE;
-	const template = process.env.REACT_APP_TEMPLATE;
-	const key = process.env.REACT_APP_KEY;
+	const service = "service_9xfvp4j";
+	const template = "template_z8rw65z";
+	const public_key = "9oeMWyToRbDSE99O6";
 
 	const sendEmail = (event) => {
 		if (event) event.preventDefault();
 
-		emailjs.sendForm(service, template, form.current, key).then(
+		emailjs.sendForm(service, template, form.current, public_key).then(
 			(result) => {
 				if (result.text === "OK") setEmailSent(true);
 			},
