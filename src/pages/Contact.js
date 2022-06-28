@@ -8,11 +8,14 @@ const style = {
 };
 
 const Contact = () => {
+	const screenWidth = window.screen.width;
+	const responsiveAddressBar =
+		screenWidth >= 1024 ? <AddressBar pageName="contact" /> : null;
 	return (
 		<div className={style.container} style={{ backgroundColor: "#f96672" }}>
 			<div>
 				<Tabs active={2} />
-				<AddressBar pageName="contact" />
+				{responsiveAddressBar}
 			</div>
 
 			<ContactForm />

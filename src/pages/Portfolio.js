@@ -8,11 +8,14 @@ const style = {
 };
 
 const Portfolio = () => {
+	const screenWidth = window.screen.width;
+	const responsiveAddressBar =
+		screenWidth >= 1024 ? <AddressBar pageName="portfolio" /> : null;
 	return (
 		<div className={style.container}>
 			<div>
 				<Tabs active={1} />
-				<AddressBar pageName="portfolio" />
+				{responsiveAddressBar}
 			</div>
 
 			<Project />
